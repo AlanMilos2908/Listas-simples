@@ -1,0 +1,111 @@
+using System;
+using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+class Program
+{
+   
+    static void Main(string[] args)
+    {
+
+        int contador = 0;
+        int cnt = 0;
+
+        List<string> nombres = new List<string>(); // Cambiamos a una lista de strings
+
+        Console.WriteLine("---------------------------------------------------");
+        Console.WriteLine("----------------Inserción de datos-----------------");
+        Console.WriteLine("---------------------------------------------------");
+
+        Console.WriteLine("Ingrese la cantidad de nombres que desea registrar:");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine();
+
+        Console.WriteLine("Ingrese el nombre:"); 
+        for (int i = 0; i < cantidad; i++)
+        {
+            Console.WriteLine( "Posición " + cnt++ +":");
+            string nombre = Console.ReadLine() ;
+            nombres.Add( nombre );
+                 
+        }
+
+        Console.WriteLine();
+
+        Console.WriteLine("------------------------------------------------");
+        Console.WriteLine("Uso del IndexOf y busqueda de datos por posicion");
+        Console.WriteLine("------------------------------------------------");
+
+        Console.WriteLine("Cual desea buscar?");
+        for (int i = 0; i == 0; i++)
+        {
+            string dato = Console.ReadLine();
+            Console.WriteLine("Cual es su posición?");
+            int num =int.Parse( Console.ReadLine());
+
+            if (nombres.IndexOf(dato) ==  num)
+            {
+                Console.WriteLine("Si existe " + dato + " ");
+            }
+            else
+            {
+                Console.WriteLine("Ese nombre no existe");
+            }
+
+        }
+
+        Console.WriteLine();
+
+
+        Console.WriteLine("---------------------------------------------------");
+        Console.WriteLine("---------------Uso del metodo Remove---------------");
+        Console.WriteLine("---------------------------------------------------");
+
+        for (int i = 0; i == 0; i++)
+        {
+               Console.WriteLine("Cual desea eliminar?");
+               string d = Console.ReadLine();
+               nombres.Remove(d);
+        }
+
+        Console.WriteLine();
+
+
+        Console.WriteLine("---------------------------------------------------");
+        Console.WriteLine("-------------------Mostrar datos-------------------");
+        Console.WriteLine("---------------------------------------------------");
+
+        Console.WriteLine("Nombres ingresados:");
+      
+            foreach (string nombre in nombres)
+            {
+               Console.WriteLine(contador++ + "." + nombre);
+            }
+
+
+        Console.WriteLine();
+
+        Console.WriteLine("---------------------------------------------------");
+        Console.WriteLine("-----------------Uso del metodo Add----------------");
+        Console.WriteLine("---------------------------------------------------");
+
+        List<int> numeros = new List<int>();
+
+        // Añadir elementos a la lista
+        numeros.Add(1);
+        numeros.Add(2);
+        numeros.Add(3);
+        numeros.Add(4);
+        numeros.Add(5);
+        numeros.Add(6);
+
+        // Mostrar los elementos de la lista
+        foreach (int numero in numeros)
+        {
+            Console.WriteLine(numero);
+        }
+
+        Console.ReadLine();
+    }
+}
